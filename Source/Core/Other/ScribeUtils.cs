@@ -26,7 +26,8 @@ namespace PrisonLabor.Core.Other
             if (Verse.Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 dict = new Dictionary<T, S>();
-                for (var i = 0; i < tmpKeys.Count; i++)
+                int count = Math.Min(tmpKeys.Count, tmpVals.Count);
+                for (var i = 0; i < count; i++)
                     if (tmpKeys[i] != null && tmpVals[i] != null)
                         dict[tmpKeys[i]] = tmpVals[i];
             }
